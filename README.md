@@ -6,11 +6,7 @@ This one is very unnoficial and uses a lot of UNSTANDARD and UNSUPPORTED practic
 
 ### Instructions
 
-* Install `yo` and `generator-phaser-unnoficialest`
-
-```
-npm-install-g yo generator-phaser-unnoficialest
-```
+* `npm-install-g yo generator-phaser-unnoficialest`
 
 * Create a new directory for the projcet
 

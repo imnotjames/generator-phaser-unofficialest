@@ -1,0 +1,16 @@
+{
+  "name": "<%= s.slugify(appname) %>",
+  "version": "0.0.0",
+  "main": "dist/app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "tests"
+  ],
+  "dependencies": {
+    "phaser-official": "~2.3.0",
+    "lodash": "~2.4.1"
+  }
+}

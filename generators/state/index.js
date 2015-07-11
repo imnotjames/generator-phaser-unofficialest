@@ -97,7 +97,7 @@ var Generator = module.exports = generators.Base.extend({
 
 		this.fs.copyTpl(
 			this.templatePath(path.join('scripts/', this.scriptLanguage, inputFilename)),
-			this.destinationPath(path.join('assets/scripts/Game/States/', outputFilename)),
+			this.destinationPath(path.join('src/assets/scripts/Game/States/', outputFilename)),
 			this
 		);
 	},

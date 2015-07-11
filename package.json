@@ -12,8 +12,14 @@
     "email": "james@notjam.es"
   },
 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imnotjames/generator-phaser-unofficialest.git"
+  },
+
   "files": [
-    "app"
+    "app",
+    "state"
   ],
   "keywords": [
     "yeoman-generator",

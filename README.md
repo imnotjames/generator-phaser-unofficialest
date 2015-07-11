@@ -10,7 +10,7 @@ code, using `browserify` to create a usable `app.js`.
 Install `yo`, `bower`, `grunt-cli`, and `generator-phaser-unnoficialest`
 
 ```
-npm-install-g yo bower grunt-cli generator-phaser-unnoficialest
+npm-install -g yo bower grunt-cli generator-phaser-unnoficialest
 ```
 
 Create a new directory for the project, and change to that directory

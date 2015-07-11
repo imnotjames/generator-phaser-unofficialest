@@ -1,12 +1,7 @@
 'use strict';
 
 var generators = require('yeoman-generator');
-
-var fs = require('fs');
-var util = require('util');
 var path = require('path');
-
-var chalk = require('chalk');
 
 var underscoreString = require('underscore.string');
 

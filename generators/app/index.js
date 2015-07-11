@@ -39,7 +39,7 @@ var Generator = module.exports = generators.Base.extend({
 				{
 					type: 'input',
 					name: 'appname',
-					message: 'What\'s the name of your game',
+					message: 'Game Name',
 					default: this.appname
 				},
 				function (answers) {
@@ -57,7 +57,7 @@ var Generator = module.exports = generators.Base.extend({
 				{
 					type: 'list',
 					name: 'scriptLanguage',
-					message: 'Scripting Language',
+					message: 'Boilerplate Scripting Language',
 					choices: [
 						{
 							value: 'javascript',
@@ -86,7 +86,7 @@ var Generator = module.exports = generators.Base.extend({
 				{
 					type: 'list',
 					name: 'phaserBuild',
-					message: 'Which build of Phaser do you want?',
+					message: 'Phaser Build',
 					choices: [
 						{
 							value: 'phaser.js',
@@ -122,7 +122,7 @@ var Generator = module.exports = generators.Base.extend({
 					{
 						type: 'input',
 						name: 'width',
-						message: 'What\'s pixel width of your game',
+						message: 'Pixel width of your game',
 						validate: function(n) { return n === +n && n === (n|0); },
 						filter: function(n) { return +n; },
 						default: 800
@@ -130,7 +130,7 @@ var Generator = module.exports = generators.Base.extend({
 					{
 						type: 'input',
 						name: 'height',
-						message: 'What\'s pixel width of your game',
+						message: 'Pixel height of your game',
 						validate: function(n) { return n === +n && n === (n|0); },
 						filter: function(n) { return +n; },
 						default: 600

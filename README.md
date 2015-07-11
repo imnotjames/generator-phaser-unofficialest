@@ -41,4 +41,4 @@ The following packages are installed by the generator.
 * `phaser-official`
 * `lodash`
 
-These are compiled into the application with `grunt` and `browserify`.
+These are compiled into the application with `grunt`.

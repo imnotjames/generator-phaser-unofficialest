@@ -30,6 +30,7 @@ yo phaser-unofficialest
 Available Generators:
 
 * [phaser-unofficialest](#app)
+* [phaser-unofficialest:state](#app)
 
 
 ### App
@@ -42,3 +43,12 @@ The following packages are installed by the generator.
 * `lodash`
 
 These are compiled into the application with `grunt`.
+
+
+### State
+
+Sets up a new Phaser State, choosing the boilerplate language that you have
+chosen for your application.
+
+An optional argument allows you to set the name non-interactively.  Otherwise,
+a name will be requested.

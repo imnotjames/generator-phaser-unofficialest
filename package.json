@@ -1,11 +1,15 @@
 {
   "name": "generator-phaser-unofficialest",
   "version": "0.0.2",
-  "description": "",
+  "license": "MIT",
+  "description": "The most unofficial of Yeoman Generators for Phaser",
   "files": [
     "app"
   ],
-  "keywords": [ "yeoman-generator" ],
+  "keywords": [
+    "yeoman-generator",
+    "phaser"
+  ],
   "dependencies": {
     "yeoman-generator": "^0.20.1",
     "underscore.string": "~3.1.1",

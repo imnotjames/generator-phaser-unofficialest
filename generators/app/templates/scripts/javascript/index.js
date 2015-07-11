@@ -1,4 +1,8 @@
 var Game = require('./Game');
 
-var game = new Game(window.document.body);
-game.startup();
+var game;
+
+window.onload = function() {
+	game = new Game(window.document.body);
+	game.startup();
+};

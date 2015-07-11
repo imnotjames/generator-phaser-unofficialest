@@ -68,7 +68,8 @@ var Generator = module.exports = generators.Base.extend({
 							value: 'typescript',
 							name: 'Typescript'
 						}
-					]
+					],
+					default: 'javascript'
 				},
 				function (answers) {
 					this.scriptLanguage = answers.scriptLanguage;
@@ -104,7 +105,8 @@ var Generator = module.exports = generators.Base.extend({
 							value: 'custom/phaser-minimum.js',
 							name: 'Minimum'
 						}
-					]
+					],
+					default: 'phaser.js'
 				},
 				function (answers) {
 					this.phaserBuild = answers.phaserBuild || 'phaser.js';

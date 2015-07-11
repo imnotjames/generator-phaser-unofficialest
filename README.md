@@ -36,9 +36,6 @@ Available Generators:
 
 Sets up the Phaser application, giving you a bit of boilerplate to get started.
 
-Use the `--typescript` flag to create the boilerplate with typescript rather
-than javascript.
-
 The following packages are installed by the generator.
 
 * `phaser-official`

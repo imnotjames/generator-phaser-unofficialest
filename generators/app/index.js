@@ -51,6 +51,12 @@ var Generator = module.exports = generators.Base.extend({
 		},
 
 		scriptLanguage: function() {
+			if (this.config.get('script-language')) {
+				this.scriptLanguage = this.config.get('script-language');
+
+				return;
+			}
+
 			var done = this.async();
 
 			this.prompt(
@@ -67,8 +73,7 @@ var Generator = module.exports = generators.Base.extend({
 							value: 'typescript',
 							name: 'Typescript'
 						}
-					],
-					default: this.config.get('scriptLanguage') || 'javascript'
+					]
 				},
 				function (answers) {
 					this.scriptLanguage = answers.scriptLanguage;

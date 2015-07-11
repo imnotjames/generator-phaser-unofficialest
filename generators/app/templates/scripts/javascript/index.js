@@ -1,3 +1,4 @@
 var Game = require('./Game');
 
-Game.boot(window.document.body);
+var game = new Game(window.document.body);
+game.startup();

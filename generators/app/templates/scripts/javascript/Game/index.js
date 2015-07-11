@@ -1,27 +1,34 @@
 var Phaser = require('../Phaser');
+var KnownStates = require("./States");
 
-var Game = {};
-
-Game.States = require("./States");
-
-Game.boot = function(element) {
-	var phaserGame = new Phaser.Game(
+var Game = function (element) {
+	Phaser.Game.call(
+		this,
 		<%= appResolution.width %>,
 		<%= appResolution.height %>,
 		Phaser.AUTO,
 		element
 	);
 
-	for (var state in Game.States) {
-		if (Game.States.hasOwnProperty(state)) {
-			phaserGame.state.add(
-				state,
-				Game.States[state]
-			);
+	for (var state in KnownStates) {
+		if (!KnownStates.hasOwnProperty(state)) {
+			continue;
 		}
-	}
 
-	phaserGame.state.start('boot');
+		this.state.add(
+			state,
+			KnownStates[state]
+		);
+	}
+};
+
+Game.prototype = Object.create(Phaser.Game.prototype);
+Game.prototype.constructor = Game;
+
+Game.prototype.startup = function() {
+	// Any other code before we startup
+
+	this.state.start('boot');
 };
 
 module.exports = Game;

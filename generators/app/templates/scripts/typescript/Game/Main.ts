@@ -8,6 +8,8 @@ module Game {
 				element
 			);
 
+			this.load.baseURL = 'assets/';
+
 			for (var state in Game.KnownStates) {
 				this.state.add(state, Game.States[Game.KnownStates[state]]);
 			}

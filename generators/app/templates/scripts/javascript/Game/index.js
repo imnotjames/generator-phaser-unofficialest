@@ -10,6 +10,8 @@ var Game = function (element) {
 		element
 	);
 
+	this.load.baseURL = 'assets/';
+
 	for (var state in KnownStates) {
 		if (!KnownStates.hasOwnProperty(state)) {
 			continue;

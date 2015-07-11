@@ -4,10 +4,6 @@ module Game.States {
 			super();
 		}
 
-		preload() {
-			this.game.load.baseURL = 'assets/';
-		}
-
 		create() {
 			this.game.stage.backgroundColor = '#CCC';
 

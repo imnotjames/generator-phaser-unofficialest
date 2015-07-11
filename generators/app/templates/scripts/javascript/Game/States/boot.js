@@ -3,10 +3,6 @@ var Boot = function(game) {
 };
 
 Boot.prototype = {
-	preload: function() {
-		this.load.baseURL = 'assets/';
-	},
-
 	create: function() {
 		this.game.stage.backgroundColor = '#CCC';
 

@@ -2,8 +2,10 @@
 
 An unofficial [Yeoman](http://yeoman.io/) generator to generate games with [phaser](http://phaser.io/).
 
-The scripts are broken up into CommonJS modules to make it easier to build clean
-code, using `browserify` to create a usable `app.js`.
+For Javascript, scripts are broken up into CommonJS modules to make it easier to
+build clean code, using `browserify` to create a usable `app.js`.
+
+For Typescript, scripts are classes under the Game module.
 
 ## Usage
 
@@ -33,6 +35,9 @@ Available Generators:
 ### App
 
 Sets up the Phaser application, giving you a bit of boilerplate to get started.
+
+Use the `--typescript` flag to create the boilerplate with typescript rather
+than javascript.
 
 The following packages are installed by the generator.
 

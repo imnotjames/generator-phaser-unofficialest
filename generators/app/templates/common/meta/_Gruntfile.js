@@ -6,8 +6,44 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-browserify');
+	grunt.loadNpmTasks('grunt-ts');
 
 	grunt.initConfig({
+
+<% if (scriptLanguage === 'javascript') { %>
+
+		jshint: {
+			options: { jshintrc: '.jshintrc' },
+			app: ['src/assets/scripts/*.js']
+		},
+
+		browserify: {
+			app: {
+				files: { 'dist/assets/scripts/app.js': ['src/assets/scripts/index.js'] },
+				options: {
+					transform: ['browserify-shim'],
+					browserifyOptions: { paths: ['src/assets/scripts'] }
+				}
+			}
+		},
+
+<% } else if (scriptLanguage === 'typescript') { %>
+
+		ts: {
+			app: {
+				src: [
+					"bower_components/phaser-official/typescript/phaser.d.ts",
+					"src/assets/scripts/**/*.ts"
+				],
+				out: 'dist/assets/scripts/app.js',
+				options: {
+					fast: 'never'
+				}
+			}
+		},
+
+<% } %>
+
 		copy: {
 			app: {
 				files: [
@@ -47,25 +83,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		<% if (scriptLanguage === 'javascript') { %>
-
-		jshint: {
-			options: { jshintrc: '.jshintrc' },
-			app: ['src/assets/scripts/*.js']
-		},
-
-		browserify: {
-			app: {
-				files: { 'dist/assets/scripts/app.js': ['src/assets/scripts/index.js'] },
-				options: {
-					transform: ['browserify-shim'],
-					browserifyOptions: { paths: ['src/assets/scripts'] }
-				}
-			}
-		},
-
-		<% } %>
-
 		connect: {
 			app: {
 				options: {
@@ -82,7 +99,11 @@ module.exports = function (grunt) {
 		}
 	});
 	grunt.registerTask('default', [
+		<% if (scriptLanguage === 'javascript') { %>
 		'browserify:app',
+		<% } else if (scriptLanguage === 'typescript') { %>
+		'ts:app',
+		<% } %>
 		'copy:app'
 	]);
 	grunt.registerTask('serve', [

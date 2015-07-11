@@ -23,11 +23,11 @@ var Generator = module.exports = generators.Base.extend({
 		this.appname = this.appname || path.basename(process.cwd());
 
 		this.serverPort = 8080;
-
-		this.scriptLanguage = 'javascript';
 	},
 
 	configuring: function() {
+		this.config.set('script-language', this.scriptLanguage);
+
 		this.config.save();
 	},
 
@@ -48,6 +48,35 @@ var Generator = module.exports = generators.Base.extend({
 					done();
 				}.bind(this)
 			);
+		},
+
+		scriptLanguage: function() {
+			var done = this.async();
+
+			this.prompt(
+				{
+					type: 'list',
+					name: 'scriptLanguage',
+					message: 'Scripting Language',
+					choices: [
+						{
+							value: 'javascript',
+							name: 'Javascript'
+						},
+						{
+							value: 'typescript',
+							name: 'Typescript'
+						}
+					],
+					default: this.config.get('scriptLanguage') || 'javascript'
+				},
+				function (answers) {
+					this.scriptLanguage = answers.scriptLanguage;
+
+					done();
+				}.bind(this)
+			);
+
 		},
 
 		build: function () {

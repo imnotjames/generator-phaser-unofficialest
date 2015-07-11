@@ -9,10 +9,10 @@ For Typescript, scripts are classes under the Game module.
 
 ## Usage
 
-Install `yo`, `bower`, `grunt-cli`, and `generator-phaser-unnoficialest`
+Install `yo`, `bower`, `grunt-cli`, and `generator-phaser-unofficialest`
 
 ```
-npm-install -g yo bower grunt-cli generator-phaser-unnoficialest
+npm-install -g yo bower grunt-cli generator-phaser-unofficialest
 ```
 
 Create a new directory for the project, and change to that directory
@@ -20,9 +20,9 @@ Create a new directory for the project, and change to that directory
 mkdir my-cool-game && cd my-cool-game
 ```
 
-Run `yo phaser-unnoficialest`
+Run `yo phaser-unofficialest`
 ```
-yo phaser-unnoficialest
+yo phaser-unofficialest
 ```
 
 ## Generators

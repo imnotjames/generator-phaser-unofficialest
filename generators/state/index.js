@@ -48,8 +48,24 @@ var Generator = module.exports = generators.Base.extend({
 		},
 
 		scriptLanguage: function() {
+			var scriptLanguageCallback = function(answers) {
+				this.scriptLanguage = answers.scriptLanguage;
+
+				if (this.scriptLanguage === 'javascript') {
+					this.stateTemplateFilename = 'state.js';
+					this.stateDestinationFilename = this.s(this.statename).slugify().value() + '.js';
+					this.stateListFilename = 'States/index.js';
+				} else if (this.scriptLanguage === 'typescript') {
+					this.stateTemplateFilename = 'State.ts';
+					this.stateDestinationFilename = this.s(this.statename).classify().value() + '.ts';
+					this.stateListFilename = 'KnownStates.ts';
+				}
+			}.bind(this);
+
 			if (this.config.get('script-language')) {
-				this.scriptLanguage = this.config.get('script-language');
+				scriptLanguageCallback({
+					scriptLanguage: this.config.get('script-language')
+				});
 
 				return;
 			}
@@ -72,32 +88,16 @@ var Generator = module.exports = generators.Base.extend({
 						}
 					]
 				},
-				function (answers) {
-					this.scriptLanguage = answers.scriptLanguage;
-
-					done();
-				}.bind(this)
+				scriptLanguageCallback
 			);
 
 		},
 	},
 
 	writing: function() {
-		var inputFilename;
-		var outputFilename;
-
-		if (this.scriptLanguage === 'javascript') {
-			inputFilename = 'state.js';
-			outputFilename = this.s(this.statename).slugify().value() + '.js';
-
-		} else if (this.scriptLanguage === 'typescript') {
-			inputFilename = 'State.ts';
-			outputFilename = this.s(this.statename).classify().value() + '.ts';
-		}
-
 		this.fs.copyTpl(
-			this.templatePath(path.join('scripts/', this.scriptLanguage, inputFilename)),
-			this.destinationPath(path.join('src/assets/scripts/Game/States/', outputFilename)),
+			this.templatePath(path.join('scripts/', this.scriptLanguage, this.stateTemplateFilename)),
+			this.destinationPath(path.join('src/assets/scripts/Game/States/', this.stateDestinationFilename)),
 			this
 		);
 	},

@@ -17,8 +17,8 @@ describe('phaser generator:app js', function () {
 		assert.fileContent('Gruntfile.js', /browserify: \{/);
 		assert.fileContent('Gruntfile.js', /'browserify:app'/);
 
-		assert.noFileContent('Gruntfile.js', /'ts:app'/)
-		assert.noFileContent('Gruntfile.js', /ts: \{/)
+		assert.noFileContent('Gruntfile.js', /'ts:app'/);
+		assert.noFileContent('Gruntfile.js', /ts: \{/);
 
 
 		done();

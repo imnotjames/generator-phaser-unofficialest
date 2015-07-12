@@ -4,5 +4,4 @@ var game;
 
 window.onload = function() {
 	game = new Game(window.document.body);
-	game.startup();
 };

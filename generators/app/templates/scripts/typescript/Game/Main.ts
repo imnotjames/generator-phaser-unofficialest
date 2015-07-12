@@ -8,15 +8,18 @@ module Game {
 				element
 			);
 
-			this.load.baseURL = 'assets/';
-
 			for (var state in Game.KnownStates) {
 				this.state.add(state, Game.States[Game.KnownStates[state]]);
 			}
 		}
 
-		startup() {
-			this.state.start('boot');
+		boot() {
+			super.boot();
+
+			if (this.isRunning) {
+				this.load.baseURL = 'assets/';
+				this.state.start('boot');
+			}
 		}
 	}
 }

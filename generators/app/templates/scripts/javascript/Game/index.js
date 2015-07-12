@@ -10,8 +10,6 @@ var Game = function (element) {
 		element
 	);
 
-	this.load.baseURL = 'assets/';
-
 	for (var state in KnownStates) {
 		if (!KnownStates.hasOwnProperty(state)) {
 			continue;
@@ -27,10 +25,13 @@ var Game = function (element) {
 Game.prototype = Object.create(Phaser.Game.prototype);
 Game.prototype.constructor = Game;
 
-Game.prototype.startup = function() {
-	// Any other code before we startup
+Game.prototype.boot = function() {
+	Phaser.Game.prototype.boot.apply(this, arguments);
 
-	this.state.start('boot');
+	if (this.isRunning) {
+		this.load.baseURL = 'assets/';
+		this.state.start('boot');
+	}
 };
 
 module.exports = Game;

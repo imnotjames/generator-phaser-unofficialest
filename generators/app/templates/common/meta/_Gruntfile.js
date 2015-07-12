@@ -76,7 +76,7 @@ module.exports = function (grunt) {
 						dest: 'dist/'
 					},
 					{
-						src: 'bower_components/phaser-official/build/<%= phaserBuild %>',
+						src: 'bower_components/phaser-official/build/' + <%- JSON.stringify(phaserBuild) %>,
 						dest: 'dist/assets/scripts/phaser.js'
 					}
 				]
@@ -86,7 +86,7 @@ module.exports = function (grunt) {
 		connect: {
 			app: {
 				options: {
-					port: <%= serverPort %>,
+					port: <%- JSON.stringify(serverPort) %>,
 					base: 'dist/'
 				}
 			}

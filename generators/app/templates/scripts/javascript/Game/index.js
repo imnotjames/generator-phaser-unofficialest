@@ -4,8 +4,8 @@ var KnownStates = require("./States");
 var Game = function (element) {
 	Phaser.Game.call(
 		this,
-		<%= appResolution.width %>,
-		<%= appResolution.height %>,
+		<%- JSON.stringify(appResolution.width) %>,
+		<%- JSON.stringify(appResolution.height) %>,
 		Phaser.AUTO,
 		element
 	);

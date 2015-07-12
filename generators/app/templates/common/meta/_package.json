@@ -1,5 +1,5 @@
 {
-  "name": "<%= s.slugify(appname) %>",
+  "name": "<%- s.slugify(appname) %>",
   "description": "A fantastic game use the Phaser Engine",
   "main": "dist/index.html",
   "browser": {

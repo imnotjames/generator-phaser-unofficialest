@@ -13,6 +13,16 @@ describe('phaser generator:app ts', function () {
 			.on('end', done);
 	});
 
+	it('creates a typescript-oriented gruntfile', function(done) {
+		assert.noFileContent('Gruntfile.js', /browserify: \{/);
+		assert.noFileContent('Gruntfile.js', /'browserify:app'/);
+
+		assert.fileContent('Gruntfile.js', /'ts:app'/);
+		assert.fileContent('Gruntfile.js', /ts: \{/);
+
+		done();
+	});
+
 	it('creates typescript files', function (done) {
 		assert.file([
 			'src/assets/scripts/Bootstrap.ts',

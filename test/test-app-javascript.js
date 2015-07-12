@@ -13,6 +13,17 @@ describe('phaser generator:app js', function () {
 			.on('end', done);
 	});
 
+	it('creates a javascript-oriented gruntfile', function(done) {
+		assert.fileContent('Gruntfile.js', /browserify: \{/);
+		assert.fileContent('Gruntfile.js', /'browserify:app'/);
+
+		assert.noFileContent('Gruntfile.js', /'ts:app'/)
+		assert.noFileContent('Gruntfile.js', /ts: \{/)
+
+
+		done();
+	});
+
 	it('creates javascript files', function (done) {
 		assert.file([
 			'src/assets/scripts/index.js',

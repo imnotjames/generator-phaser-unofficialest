@@ -4,9 +4,12 @@ var path = require('path');
 var helpers = require('yeoman-generator').test;
 var assert = require('yeoman-generator').assert;
 
-describe('phaser generator', function () {
+describe('phaser generator:app meta', function () {
 	before(function (done) {
 		helpers.run(path.join( __dirname, '../generators/app' ))
+			.withPrompts({
+				appname: 'test app'
+			})
 			.on('end', done);
 	});
 
@@ -29,21 +32,6 @@ describe('phaser generator', function () {
 
 			'src/assets/images/yeoman.png',
 			'src/assets/styles/app.css'
-		]);
-
-		done();
-	});
-
-
-	it('creates javascript files', function (done) {
-		assert.file([
-			'src/assets/scripts/index.js',
-			'src/assets/scripts/Phaser.js',
-			'src/assets/scripts/Game/index.js',
-			'src/assets/scripts/Game/States/index.js',
-			'src/assets/scripts/Game/States/boot.js',
-			'src/assets/scripts/Game/States/mainmenu.js',
-			'src/assets/scripts/Game/States/preload.js'
 		]);
 
 		done();

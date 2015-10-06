@@ -8,6 +8,9 @@
   "browserify-shim": {
     "lodash": {
       "exports": "_"
+    },
+    "Phaser": {
+      "exports": "global:Phaser"
     }
   },
   "devDependencies": {

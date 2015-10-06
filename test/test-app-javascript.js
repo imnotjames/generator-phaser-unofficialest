@@ -27,7 +27,6 @@ describe('phaser generator:app js', function () {
 	it('creates javascript files', function (done) {
 		assert.file([
 			'src/assets/scripts/index.js',
-			'src/assets/scripts/Phaser.js',
 			'src/assets/scripts/Game/index.js',
 			'src/assets/scripts/Game/States/index.js',
 			'src/assets/scripts/Game/States/boot.js',

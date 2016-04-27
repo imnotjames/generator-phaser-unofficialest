@@ -1,4 +1,4 @@
-var Phaser = require('../Phaser');
+var Phaser = require('Phaser');
 var KnownStates = require("./States");
 
 var Game = function (element) {

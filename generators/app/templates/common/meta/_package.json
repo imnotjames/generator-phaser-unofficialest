@@ -1,7 +1,11 @@
 {
   "name": "<%- s.slugify(appname) %>",
   "description": "A fantastic game use the Phaser Engine",
-  "main": "dist/index.html",
+  "main": "build/index.html",
+  "scripts": {
+    "start": "grunt serve",
+    "build": "grunt default"
+  },
   "browser": {
     "lodash": "./bower_components/lodash/dist/lodash.compat.js"
   },

@@ -6,13 +6,7 @@
     "start": "grunt serve",
     "build": "grunt default"
   },
-  "browser": {
-    "lodash": "./bower_components/lodash/dist/lodash.compat.js"
-  },
   "browserify-shim": {
-    "lodash": {
-      "exports": "_"
-    },
     "Phaser": {
       "exports": "global:Phaser"
     }
@@ -28,5 +22,8 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-ts": "^4.2"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.11.2"
+  }
 }

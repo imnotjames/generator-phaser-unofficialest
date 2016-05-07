@@ -10,7 +10,6 @@
     "tests"
   ],
   "dependencies": {
-    "phaser-official": "~2.4.7",
-    "lodash": "~2.4.1"
+    "phaser-official": "~2.4.7"
   }
 }
